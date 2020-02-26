@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		443FEF4624061EF4008BA396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF4524061EF4008BA396 /* AppDelegate.swift */; };
+		443FEF4824061EF4008BA396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF4724061EF4008BA396 /* SceneDelegate.swift */; };
+		443FEF4D24061EF4008BA396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443FEF4B24061EF4008BA396 /* Main.storyboard */; };
+		443FEF4F24061EF6008BA396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443FEF4E24061EF6008BA396 /* Assets.xcassets */; };
+		443FEF5224061EF6008BA396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */; };
+		443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF5D2406326C008BA396 /* PlantTableViewController.swift */; };
+		443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF5F2406328D008BA396 /* AddPlantViewController.swift */; };
+		443FEF622406329F008BA396 /* PlantDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF612406329F008BA396 /* PlantDetialViewController.swift */; };
+		443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF63240632EC008BA396 /* PlantTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		443FEF4224061EF4008BA396 /* Water My Plant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water My Plant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443FEF4524061EF4008BA396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		443FEF4724061EF4008BA396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		443FEF4C24061EF4008BA396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		443FEF4E24061EF6008BA396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		443FEF5124061EF6008BA396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		443FEF5324061EF6008BA396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443FEF5D2406326C008BA396 /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
+		443FEF5F2406328D008BA396 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
+		443FEF612406329F008BA396 /* PlantDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetialViewController.swift; sourceTree = "<group>"; };
+		443FEF63240632EC008BA396 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		443FEF3F24061EF4008BA396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		443FEF3924061EF4008BA396 = {
+			isa = PBXGroup;
+			children = (
+				443FEF4424061EF4008BA396 /* Water My Plant */,
+				443FEF4324061EF4008BA396 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		443FEF4324061EF4008BA396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				443FEF4224061EF4008BA396 /* Water My Plant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		443FEF4424061EF4008BA396 /* Water My Plant */ = {
+			isa = PBXGroup;
+			children = (
+				443FEF5C2406255A008BA396 /* Model */,
+				443FEF592406251D008BA396 /* Recources */,
+				443FEF5A2406253A008BA396 /* View Controller */,
+				443FEF5B24062549008BA396 /* Views */,
+				443FEF5324061EF6008BA396 /* Info.plist */,
+			);
+			path = "Water My Plant";
+			sourceTree = "<group>";
+		};
+		443FEF592406251D008BA396 /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				443FEF4524061EF4008BA396 /* AppDelegate.swift */,
+				443FEF4724061EF4008BA396 /* SceneDelegate.swift */,
+				443FEF4E24061EF6008BA396 /* Assets.xcassets */,
+				443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		443FEF5A2406253A008BA396 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				443FEF5D2406326C008BA396 /* PlantTableViewController.swift */,
+				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
+				443FEF612406329F008BA396 /* PlantDetialViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		443FEF5B24062549008BA396 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				443FEF4B24061EF4008BA396 /* Main.storyboard */,
+				443FEF63240632EC008BA396 /* PlantTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		443FEF5C2406255A008BA396 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		443FEF4124061EF4008BA396 /* Water My Plant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 443FEF5624061EF6008BA396 /* Build configuration list for PBXNativeTarget "Water My Plant" */;
+			buildPhases = (
+				443FEF3E24061EF4008BA396 /* Sources */,
+				443FEF3F24061EF4008BA396 /* Frameworks */,
+				443FEF4024061EF4008BA396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Water My Plant";
+			productName = "Water My Plant";
+			productReference = 443FEF4224061EF4008BA396 /* Water My Plant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		443FEF3A24061EF4008BA396 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Breena Greek";
+				TargetAttributes = {
+					443FEF4124061EF4008BA396 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 443FEF3D24061EF4008BA396 /* Build configuration list for PBXProject "Water My Plant" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 443FEF3924061EF4008BA396;
+			productRefGroup = 443FEF4324061EF4008BA396 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				443FEF4124061EF4008BA396 /* Water My Plant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		443FEF4024061EF4008BA396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				443FEF5224061EF6008BA396 /* LaunchScreen.storyboard in Resources */,
+				443FEF4F24061EF6008BA396 /* Assets.xcassets in Resources */,
+				443FEF4D24061EF4008BA396 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		443FEF3E24061EF4008BA396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				443FEF4624061EF4008BA396 /* AppDelegate.swift in Sources */,
+				443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */,
+				443FEF4824061EF4008BA396 /* SceneDelegate.swift in Sources */,
+				443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */,
+				443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */,
+				443FEF622406329F008BA396 /* PlantDetialViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		443FEF4B24061EF4008BA396 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				443FEF4C24061EF4008BA396 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				443FEF5124061EF6008BA396 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		443FEF5424061EF6008BA396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		443FEF5524061EF6008BA396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		443FEF5724061EF6008BA396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water My Plant/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Breena-Greek.Water-My-Plant";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		443FEF5824061EF6008BA396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Water My Plant/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Breena-Greek.Water-My-Plant";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		443FEF3D24061EF4008BA396 /* Build configuration list for PBXProject "Water My Plant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443FEF5424061EF6008BA396 /* Debug */,
+				443FEF5524061EF6008BA396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		443FEF5624061EF6008BA396 /* Build configuration list for PBXNativeTarget "Water My Plant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443FEF5724061EF6008BA396 /* Debug */,
+				443FEF5824061EF6008BA396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 443FEF3A24061EF4008BA396 /* Project object */;
+}
