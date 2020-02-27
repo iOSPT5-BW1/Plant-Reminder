@@ -96,7 +96,7 @@
         <!--Plant Details-->
         <scene sceneID="EN4-dy-bgg">
             <objects>
-                <viewController id="fS4-rm-Rdr" customClass="PlantDetialViewController" customModule="Water_My_Plant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fS4-rm-Rdr" customClass="PlantDetailViewController" customModule="Water_My_Plant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0SY-xt-nn3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -14,8 +14,10 @@
 		443FEF5224061EF6008BA396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */; };
 		443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF5D2406326C008BA396 /* PlantTableViewController.swift */; };
 		443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF5F2406328D008BA396 /* AddPlantViewController.swift */; };
-		443FEF622406329F008BA396 /* PlantDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF612406329F008BA396 /* PlantDetialViewController.swift */; };
+		443FEF622406329F008BA396 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF612406329F008BA396 /* PlantDetailViewController.swift */; };
 		443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF63240632EC008BA396 /* PlantTableViewCell.swift */; };
+		684A5A0C2407627700819D73 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0B2407627600819D73 /* Plant.swift */; };
+		684A5A0F2407629A00819D73 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0E2407629A00819D73 /* PlantController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		443FEF5324061EF6008BA396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443FEF5D2406326C008BA396 /* PlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewController.swift; sourceTree = "<group>"; };
 		443FEF5F2406328D008BA396 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
-		443FEF612406329F008BA396 /* PlantDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetialViewController.swift; sourceTree = "<group>"; };
+		443FEF612406329F008BA396 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		443FEF63240632EC008BA396 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		684A5A0B2407627600819D73 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		684A5A0E2407629A00819D73 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,8 @@
 		443FEF4424061EF4008BA396 /* Water My Plant */ = {
 			isa = PBXGroup;
 			children = (
-				443FEF5C2406255A008BA396 /* Model */,
+				684A5A0D2407628600819D73 /* Controllers */,
+				684A5A0A2407626D00819D73 /* Model */,
 				443FEF5B24062549008BA396 /* Views */,
 				443FEF5A2406253A008BA396 /* View Controller */,
 				443FEF592406251D008BA396 /* Recources */,
@@ -87,7 +92,7 @@
 			children = (
 				443FEF5D2406326C008BA396 /* PlantTableViewController.swift */,
 				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
-				443FEF612406329F008BA396 /* PlantDetialViewController.swift */,
+				443FEF612406329F008BA396 /* PlantDetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -101,11 +106,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		443FEF5C2406255A008BA396 /* Model */ = {
+		684A5A0A2407626D00819D73 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				684A5A0B2407627600819D73 /* Plant.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		684A5A0D2407628600819D73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				684A5A0E2407629A00819D73 /* PlantController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +196,11 @@
 				443FEF4624061EF4008BA396 /* AppDelegate.swift in Sources */,
 				443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */,
 				443FEF4824061EF4008BA396 /* SceneDelegate.swift in Sources */,
+				684A5A0F2407629A00819D73 /* PlantController.swift in Sources */,
 				443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */,
+				684A5A0C2407627700819D73 /* Plant.swift in Sources */,
 				443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */,
-				443FEF622406329F008BA396 /* PlantDetialViewController.swift in Sources */,
+				443FEF622406329F008BA396 /* PlantDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
