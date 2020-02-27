@@ -12,6 +12,22 @@ import UIKit
 class PlantController {
     
     var plants: [Plant] = []
+
+    func createPlant(nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
+        let plant = Plant(nickname: nickname, species: species, waterFrequency: waterFrequency, sunlightAmount: sunlightAmount, indoorOrOutdoor: indoorOrOutdoor, plantImageData: plantImageData)
+        plants.append(plant)
+    }
+    
+    func updatePlant(plant: Plant, nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
+        if let plantList = plants.firstIndex(of: plant) {
+            plants[plantList].nickname = nickname
+            plants[plantList].species = species
+            plants[plantList].waterFrequency = waterFrequency
+            plants[plantList].sunlightAmount = sunlightAmount
+            plants[plantList].indoorOrOutdoor = indoorOrOutdoor
+            plants[plantList].plantImageData = plantImageData
+        }
+    }
     
     private var persistentFileURL: URL? {
         let fileManager = FileManager.default

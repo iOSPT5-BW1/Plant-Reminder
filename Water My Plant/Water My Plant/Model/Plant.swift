@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Plant: Codable {
+struct Plant: Codable, Equatable {
     var nickname: String
     var species: String
     var waterFrequency: String
