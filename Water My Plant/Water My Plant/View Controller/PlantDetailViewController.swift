@@ -35,6 +35,7 @@ class PlantDetailViewController: UIViewController {
         This plant requires \(plant?.sunlightAmount) sunlight.
         This plant is a(n) \(plant?.indoorOrOutdoor) plant.
 """
+        self.title = plant?.nickname
     }
     
 }
