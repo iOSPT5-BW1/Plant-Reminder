@@ -9,16 +9,35 @@
 import UIKit
 
 class PlantTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: Properties
+    
+    var plant: Plant? {
+        didSet {
+            self.updateViews()
+        }
     }
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var waterStatusLabel: UILabel!
+    
+    // MARK: IBActions
+    
+    
+    
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateViews() {
+        guard let plant = plant else { return }
+        
+        plantImage.image = UIImage(data: plant.plantImage)
+        nicknameLabel.text = plant.nickname
+        speciesLabel.text = plant.species
+//        waterStatusLabel.text = 
+        
     }
 
 }

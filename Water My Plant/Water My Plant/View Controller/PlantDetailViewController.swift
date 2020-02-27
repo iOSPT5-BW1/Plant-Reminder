@@ -1,5 +1,5 @@
 //
-//  PlantDetialViewController.swift
+//  PlantDetailViewController.swift
 //  Water My Plant
 //
 //  Created by Breena Greek on 2/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlantDetialViewController: UIViewController {
+class PlantDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
