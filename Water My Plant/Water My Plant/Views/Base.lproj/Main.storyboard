@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="274"/>
+            <point key="canvasLocation" x="1696" y="541"/>
         </scene>
         <!--Add Plant View Controller-->
         <scene sceneID="HsP-fL-Tna">
@@ -170,7 +170,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="fkc-Q0-EaB">
-                                <rect key="frame" x="0.0" y="20" width="414" height="558"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="539"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA4-wk-ORG">
                                         <rect key="frame" x="84" y="0.0" width="246.5" height="41"/>
@@ -185,11 +185,11 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiI-fJ-Pok">
-                                        <rect key="frame" x="171" y="264" width="72" height="57"/>
+                                        <rect key="frame" x="171" y="264" width="72" height="38"/>
                                         <state key="normal" title="Add Photo"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sIw-ZX-Y6Z">
-                                        <rect key="frame" x="47" y="348" width="320" height="210"/>
+                                        <rect key="frame" x="47" y="329" width="320" height="210"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your plant's nickname:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="roX-LQ-oM4">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -225,15 +225,22 @@
                         <constraints>
                             <constraint firstItem="fkc-Q0-EaB" firstAttribute="leading" secondItem="3bE-9x-Qob" secondAttribute="leading" id="3ps-io-4Vx"/>
                             <constraint firstItem="fkc-Q0-EaB" firstAttribute="top" secondItem="3bE-9x-Qob" secondAttribute="top" constant="20" id="4bD-gL-bcx"/>
-                            <constraint firstItem="3bE-9x-Qob" firstAttribute="bottom" secondItem="fkc-Q0-EaB" secondAttribute="bottom" constant="230" id="Bik-gm-A2H"/>
+                            <constraint firstItem="3bE-9x-Qob" firstAttribute="bottom" secondItem="fkc-Q0-EaB" secondAttribute="bottom" constant="200" id="Bik-gm-A2H"/>
                             <constraint firstItem="3bE-9x-Qob" firstAttribute="trailing" secondItem="fkc-Q0-EaB" secondAttribute="trailing" id="YMJ-75-GCj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3bE-9x-Qob"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="cancel" id="ne7-ia-aJT"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7yW-mG-Rfq"/>
+                        <barButtonItem systemItem="save" id="r4s-C9-jOT"/>
+                    </toolbarItems>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWc-MX-M58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="-422"/>
+            <point key="canvasLocation" x="1696" y="-110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cob-wm-Hhm">

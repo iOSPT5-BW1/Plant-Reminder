@@ -63,9 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				443FEF5C2406255A008BA396 /* Model */,
-				443FEF592406251D008BA396 /* Recources */,
-				443FEF5A2406253A008BA396 /* View Controller */,
 				443FEF5B24062549008BA396 /* Views */,
+				443FEF5A2406253A008BA396 /* View Controller */,
+				443FEF592406251D008BA396 /* Recources */,
 				443FEF5324061EF6008BA396 /* Info.plist */,
 			);
 			path = "Water My Plant";
