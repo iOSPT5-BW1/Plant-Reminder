@@ -46,7 +46,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
             if let plant = plant {
                 if let plantController = plantController {
                     if let text = plantNickname.text, !text.isEmpty, let photoData = plantImage.image?.pngData() {
-                        plantController.update
+//                        plantController.update
                     }
                 }
             } else {
@@ -54,7 +54,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
                     if let text = plantNickname.text, !text.isEmpty {
                         let photoData = plantImage.image?.jpegData(compressionQuality: 1)
                         
-                        plantController.create
+//                        plantController.create
                     }
                 }
             }

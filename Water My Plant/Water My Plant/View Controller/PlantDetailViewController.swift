@@ -9,22 +9,33 @@
 import UIKit
 
 class PlantDetailViewController: UIViewController {
+    
+    var plantController: PlantController?
+    var plant: Plant?
+    
+    // MARK: IBOutlets
+    @IBOutlet weak var plantNicknameLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var optimalConditionsTextView: UITextView!
+    @IBOutlet weak var plantDetailImageView: UIImageView!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+    }
 
-        // Do any additional setup after loading the view.
+    func updateViews() {
+        plantNicknameLabel.text = plant?.nickname
+        speciesLabel.text = plant?.species
+        optimalConditionsTextView.text = """
+        This plant should be watered \(plant?.waterFrequency).
+        This plant requires \(plant?.sunlightAmount) sunlight.
+        This plant is a(n) \(plant?.indoorOrOutdoor) plant.
+"""
+        self.title = plant?.nickname
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
