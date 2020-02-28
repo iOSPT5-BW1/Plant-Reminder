@@ -14,7 +14,7 @@ class PlantTableViewCell: UITableViewCell {
     
     var plant: Plant? {
         didSet {
-            self.updateViews()
+            updateViews()
         }
     }
     
