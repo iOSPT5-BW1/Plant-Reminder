@@ -18,6 +18,7 @@ class PlantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - Table view data source
@@ -36,6 +37,13 @@ class PlantTableViewController: UITableViewController {
         let plant = plants[indexPath.row]
         cell.plant = plant
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            plants.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
     // MARK: - Navigation

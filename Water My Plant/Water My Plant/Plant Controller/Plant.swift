@@ -13,8 +13,8 @@ import UIKit
 struct Plant: Codable, Equatable {
     var nickname: String
     var species: String
-    var waterFrequency: String = nil
-    var sunlightAmount: String = nil
-    var indoorOrOutdoor: String = nil
+    var waterFrequency: String? = nil
+    var sunlightAmount: String? = nil
+    var indoorOrOutdoor: String? = nil
     var plantImageData: Data
 }

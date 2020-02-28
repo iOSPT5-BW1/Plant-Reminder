@@ -33,7 +33,7 @@ class PlantTableViewCell: UITableViewCell {
     func updateViews() {
         guard let plant = plant else { return }
         
-        plantImage.image = UIImage(data: plant.plantImage)
+        plantImage.image = UIImage(data: plant.plantImageData)
         nicknameLabel.text = plant.nickname
         speciesLabel.text = plant.species
 //        waterStatusLabel.text = 
