@@ -45,34 +45,26 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
         
             if let plant = plant {
                 if let plantController = plantController {
-                    if let text = plantNickname.text, !text.isEmpty, let photoData = plantImage.image?.pngData() {
-//                        plantController.update
+                    if let nicknameText = plantNickname.text, let speciesText = plantSpecies.text, let waterText = waterFrequency.text, let sunlightText = sunlightNeed.text, let indoorOutdoor = indoorOrOutdoor.text,
+                        !nicknameText.isEmpty, !speciesText.isEmpty, !waterText.isEmpty, !sunlightText.isEmpty, !indoorOutdoor.isEmpty,
+                        let photoData = plantImage.image?.pngData() {
+                        plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
+                        delegate?.plantWasCreated(plant)
                     }
                 }
             } else {
-                if let plantController = plantController {
-                    if let text = plantNickname.text, !text.isEmpty {
-                        let photoData = plantImage.image?.jpegData(compressionQuality: 1)
-                        
-//                        plantController.create
-                    }
-                }
+                return
+//                if let plantController = plantController {
+//                    if let text = plantNickname.text, !text.isEmpty {
+//                        let photoData = plantImage.image?.jpegData(compressionQuality: 1)
+//
+////                        plantController.create
+//                    }
+//                }
             }
-            navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         }
 
-//        guard let name = plantNickname.text,
-//            let species = plantSpecies.text,
-//            !name.isEmpty,
-//            !species.isEmpty else { return }
-//
-//        let imageData = plantImage.image?.pngData()
-//
-//        var plant = Plant(nickname: name, species: species, plantImage: UIImage?(data: imageData))
-//
-//        delegate?.plantWasCreated(plant)
-//        self.dismiss(animated: true, completion: nil)
-//    }
     func updateViews() {
            guard let plant = plant else { return }
            plantImage.image = UIImage(data: plant.plantImageData)
@@ -92,12 +84,5 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
     }
-    
-    // MARK: - Navigation
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //    }
 }
