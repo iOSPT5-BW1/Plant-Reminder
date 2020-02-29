@@ -25,7 +25,6 @@ class PlantController {
             plants[plantList].waterFrequency = waterFrequency
             plants[plantList].sunlightAmount = sunlightAmount
             plants[plantList].indoorOrOutdoor = indoorOrOutdoor
-            
             plants[plantList].plantImageData = plantImageData
         }
     }

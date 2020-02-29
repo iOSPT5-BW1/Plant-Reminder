@@ -44,6 +44,7 @@ class PlantTableViewController: UITableViewController {
         if editingStyle == .delete {
             plantController.plants.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            plantController.saveToPersistentStore()
         }
     }
     
