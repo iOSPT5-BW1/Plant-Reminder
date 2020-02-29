@@ -13,11 +13,14 @@ class PlantTableViewController: UITableViewController {
     // MARK: Properties
     
     let reuseIdentifier = "PlantCell"
-    var plants: [Plant] = []
+    let plantController = PlantController()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
     
@@ -28,40 +31,50 @@ class PlantTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plants.count    }
+        return plantController.plants.count    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? PlantTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCell", for: indexPath) as? PlantTableViewCell else { return UITableViewCell() }
 
-        let plant = plants[indexPath.row]
+        
+        let plant = plantController.plants[indexPath.row]
         cell.plant = plant
         return cell
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            plants.remove(at: indexPath.item)
+            plantController.plants.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            plantController.saveToPersistentStore()
         }
     }
     
     // MARK: - Navigation
+
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        let addPlantVC = AddPlantViewController()
+        addPlantVC.plantController = plantController
+        let navController = UINavigationController(rootViewController: addPlantVC)
+        addPlantVC.delegate = self
+        present(navController, animated: true)
+    }
     
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPlantModalSegue" {
-            let addPlantVC = segue.destination as! AddPlantViewController
-            
-            addPlantVC.delegate = self
-    
+            guard let addPlantVC = segue.destination as? AddPlantViewController else { return }
+            addPlantVC.plantController = plantController
+//            addPlantVC.delegate = self
         }
+        
     }
+    
 }
 
 extension PlantTableViewController: AddPlantDelegate {
     func plantWasCreated(_ plant: Plant) {
-        plants.append(plant)
+        plantController.plants.append(plant)
         tableView.reloadData()
     }
 }

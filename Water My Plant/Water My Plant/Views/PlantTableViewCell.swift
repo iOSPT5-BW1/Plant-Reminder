@@ -14,7 +14,7 @@ class PlantTableViewCell: UITableViewCell {
     
     var plant: Plant? {
         didSet {
-            self.updateViews()
+            updateViews()
         }
     }
     
@@ -23,20 +23,19 @@ class PlantTableViewCell: UITableViewCell {
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
-    @IBOutlet weak var waterStatusLabel: UILabel!
     
     // MARK: IBActions
     
+    @IBAction func needsWater(_ sender: Any) {
+    }
     
     
-
     func updateViews() {
         guard let plant = plant else { return }
         
         plantImage.image = UIImage(data: plant.plantImageData)
         nicknameLabel.text = plant.nickname
         speciesLabel.text = plant.species
-//        waterStatusLabel.text = 
         
     }
 

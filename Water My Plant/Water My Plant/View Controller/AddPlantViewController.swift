@@ -28,6 +28,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var waterFrequency: UITextField!
     @IBOutlet weak var sunlightNeed: UITextField!
     @IBOutlet weak var indoorOrOutdoor: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: IBACtions
     
@@ -39,40 +40,33 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         
-            if let plant = plant {
-                if let plantController = plantController {
-                    if let text = plantNickname.text, !text.isEmpty, let photoData = plantImage.image?.pngData() {
-//                        plantController.update
-                    }
-                }
-            } else {
-                if let plantController = plantController {
-                    if let text = plantNickname.text, !text.isEmpty {
-                        let photoData = plantImage.image?.jpegData(compressionQuality: 1)
-                        
-//                        plantController.create
-                    }
-                }
+        guard let plantController = plantController else { return }
+                    if let nicknameText = plantNickname.text,
+                        let speciesText = plantSpecies.text,
+                        let waterText = waterFrequency.text,
+                        let sunlightText = sunlightNeed.text,
+                        let indoorOutdoor = indoorOrOutdoor.text,
+                        !nicknameText.isEmpty,
+                        !speciesText.isEmpty,
+                        !waterText.isEmpty,
+                        !sunlightText.isEmpty,
+                        !indoorOutdoor.isEmpty,
+                        let photoData = plantImage.image?.pngData() {
+                        plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
+//                        delegate?.plantWasCreated(plant)
+                    } else {
+                return
             }
-            navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         }
 
-//        guard let name = plantNickname.text,
-//            let species = plantSpecies.text,
-//            !name.isEmpty,
-//            !species.isEmpty else { return }
-//
-//        let imageData = plantImage.image?.pngData()
-//
-//        var plant = Plant(nickname: name, species: species, plantImage: UIImage?(data: imageData))
-//
-//        delegate?.plantWasCreated(plant)
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    
+
     func updateViews() {
            guard let plant = plant else { return }
            plantImage.image = UIImage(data: plant.plantImageData)
@@ -88,16 +82,26 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
            dismiss(animated: true, completion: nil)
    }
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    // MARK: - Navigation
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //    }
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
 }
