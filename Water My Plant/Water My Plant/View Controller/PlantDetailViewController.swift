@@ -28,14 +28,15 @@ class PlantDetailViewController: UIViewController {
     }
 
     func updateViews() {
-        plantNicknameLabel.text = plant?.nickname
-        speciesLabel.text = plant?.species
-//        optimalConditionsTextView.text = """
-//        This plant should be watered \(plant?.waterFrequency).
-//        This plant requires \(plant?.sunlightAmount) sunlight.
-//        This plant is a(n) \(plant?.indoorOrOutdoor) plant.
-//"""
-        self.title = plant?.nickname
+        guard let plant = plant else { return }
+        plantNicknameLabel.text = plant.nickname
+        speciesLabel.text = plant.species
+        optimalConditionsTextView.text = """
+        This plant should be watered \(plant.waterFrequency).
+        This plant requires \(plant.sunlightAmount) sunlight.
+        This plant is a(n) \(plant.indoorOrOutdoor) plant.
+"""
+        self.title = plant.nickname
     }
     
 }

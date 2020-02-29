@@ -15,9 +15,12 @@ class PlantTableViewController: UITableViewController {
     let reuseIdentifier = "PlantCell"
     let plantController = PlantController()
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
     
@@ -44,16 +47,27 @@ class PlantTableViewController: UITableViewController {
         if editingStyle == .delete {
             plantController.plants.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            plantController.saveToPersistentStore()
         }
     }
     
     // MARK: - Navigation
-    
+
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         let addPlantVC = AddPlantViewController()
+        addPlantVC.plantController = plantController
         let navController = UINavigationController(rootViewController: addPlantVC)
         addPlantVC.delegate = self
         present(navController, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddPlantModalSegue" {
+            guard let addPlantVC = segue.destination as? AddPlantViewController else { return }
+            addPlantVC.plantController = plantController
+//            addPlantVC.delegate = self
+        }
+        
     }
     
 }

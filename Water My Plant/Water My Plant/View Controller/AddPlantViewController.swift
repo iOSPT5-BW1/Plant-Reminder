@@ -39,28 +39,27 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         
-            if let plant = plant {
-                if let plantController = plantController {
-                    if let nicknameText = plantNickname.text, let speciesText = plantSpecies.text, let waterText = waterFrequency.text, let sunlightText = sunlightNeed.text, let indoorOutdoor = indoorOrOutdoor.text,
-                        !nicknameText.isEmpty, !speciesText.isEmpty, !waterText.isEmpty, !sunlightText.isEmpty, !indoorOutdoor.isEmpty,
+        guard let plantController = plantController else { return }
+                    if let nicknameText = plantNickname.text,
+                        let speciesText = plantSpecies.text,
+                        let waterText = waterFrequency.text,
+                        let sunlightText = sunlightNeed.text,
+                        let indoorOutdoor = indoorOrOutdoor.text,
+                        !nicknameText.isEmpty,
+                        !speciesText.isEmpty,
+                        !waterText.isEmpty,
+                        !sunlightText.isEmpty,
+                        !indoorOutdoor.isEmpty,
                         let photoData = plantImage.image?.pngData() {
                         plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
-                        delegate?.plantWasCreated(plant)
-                    }
-                }
-            } else {
+//                        delegate?.plantWasCreated(plant)
+                    } else {
                 return
-//                if let plantController = plantController {
-//                    if let text = plantNickname.text, !text.isEmpty {
-//                        let photoData = plantImage.image?.jpegData(compressionQuality: 1)
-//
-////                        plantController.create
-//                    }
-//                }
             }
         navigationController?.popViewController(animated: true)
         }

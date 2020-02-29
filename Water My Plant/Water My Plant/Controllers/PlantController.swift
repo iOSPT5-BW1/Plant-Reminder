@@ -16,6 +16,7 @@ class PlantController {
     func createPlant(nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
         let plant = Plant(nickname: nickname, species: species, waterFrequency: waterFrequency, sunlightAmount: sunlightAmount, indoorOrOutdoor: indoorOrOutdoor, plantImageData: plantImageData)
         plants.append(plant)
+        saveToPersistentStore()
     }
     
     func updatePlant(plant: Plant, nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
