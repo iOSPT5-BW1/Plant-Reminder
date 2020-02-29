@@ -306,6 +306,7 @@
                         <outlet property="plantImage" destination="xXV-Sh-apj" id="c3i-pt-Rzs"/>
                         <outlet property="plantNickname" destination="roX-LQ-oM4" id="zVh-Oy-NTa"/>
                         <outlet property="plantSpecies" destination="GU4-9O-eC0" id="3gC-Br-NN9"/>
+                        <outlet property="scrollView" destination="u15-1P-poI" id="5wG-86-PYN"/>
                         <outlet property="sunlightNeed" destination="SLt-02-1wZ" id="yzf-nk-NbN"/>
                         <outlet property="waterFrequency" destination="Tjl-BO-288" id="Fso-2Z-irh"/>
                     </connections>
