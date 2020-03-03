@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol AddPlantDelegate {
-    func plantWasCreated(_ plant: Plant)
-}
+//protocol AddPlantDelegate {
+//    func plantWasCreated(_ plant: Plant)
+//}
 
 class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,7 +18,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var plant: Plant?
     var plantController: PlantController?
-    var delegate: AddPlantDelegate?
+//    var delegate: AddPlantDelegate?
     
     // MARK: IBOutlets
     
@@ -58,6 +58,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
                         !indoorOutdoor.isEmpty,
                         let photoData = plantImage.image?.pngData() {
                         plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
+//                        var plant = Plant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
 //                        delegate?.plantWasCreated(plant)
                     } else {
                 return
