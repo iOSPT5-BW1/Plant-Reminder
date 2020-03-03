@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				443FEF5D2406326C008BA396 /* PlantTableViewController.swift */,
-				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
 				443FEF612406329F008BA396 /* PlantDetailViewController.swift */,
+				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
 				68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controller";

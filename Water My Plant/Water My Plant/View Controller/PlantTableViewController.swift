@@ -17,11 +17,17 @@ class PlantTableViewController: UITableViewController {
     let themeHelper = ThemeHelper()
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
         tableView.reloadData()
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         print("ViewDidLoad was called")
+        setTheme()
+         tableView.reloadData()
         tableView.tableFooterView = UIView()
             
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Blue Rose")!)
@@ -33,6 +39,7 @@ class PlantTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -69,15 +76,33 @@ class PlantTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PlantDetailViewController {
                 detailVC.plant = plantController.plants[indexPath.row]
-            } else if segue.identifier == "ThemeSelectionSegue" {
-                let themeVC = segue.destination as? ThemeSelectionViewController
-                themeVC?.themeHelper = themeHelper
+            }
+        }   else if segue.identifier == "ThemeSelectionSegue" {
+                guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+                themeVC.themeHelper = themeHelper
             }
         }
+    func setTheme() {
+           var preference = themeHelper.themePreference
+          
+           if preference == "Light" {
+               view.backgroundColor = .white
+           } else if preference == "Dark" {
+           view.backgroundColor = .darkGray
+           } else if preference == "Blue" {
+           view.backgroundColor = .blue
+           } else if preference == "Green" {
+           view.backgroundColor = .green
+           } else if preference == "Pink" {
+           view.backgroundColor = .systemPink
+           } else if preference == "Orange" {
+           view.backgroundColor = .orange
+           }
+       }
         
     }
     
-}
+
 
 
 

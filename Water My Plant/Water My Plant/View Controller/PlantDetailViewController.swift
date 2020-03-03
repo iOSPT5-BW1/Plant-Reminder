@@ -12,7 +12,7 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
     
     var plant: Plant?
     let plantController = PlantController()
-    var themeHelper: ThemeHelper?
+    let themeHelper = ThemeHelper()
     
     // MARK: IBOutlets
     @IBOutlet weak var speciesLabel: UILabel!
@@ -27,7 +27,10 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
         setTheme()
     }
     
-      
+      override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            setTheme()
+        }
 
     func updateViews() {
         guard let plant = plant else { return }
@@ -40,22 +43,23 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
             sunlightRuquirementsTextField.text = "Requires \(plant.sunlightAmount) sunlight."
             indoorOutdoorTextField.text = "\(plant.indoorOrOutdoor) plant."
     }
+
     
     func setTheme() {
-        guard let preference = themeHelper?.themePreference else { return }
-        
+        var preference = themeHelper.themePreference
+       
         if preference == "Light" {
             view.backgroundColor = .white
         } else if preference == "Dark" {
-            view.backgroundColor = .darkGray
+        view.backgroundColor = .darkGray
         } else if preference == "Blue" {
-            view.backgroundColor = .blue
+        view.backgroundColor = .blue
         } else if preference == "Green" {
-            view.backgroundColor = .green
+        view.backgroundColor = .green
         } else if preference == "Pink" {
-            view.backgroundColor = .systemPink
+        view.backgroundColor = .systemPink
         } else if preference == "Orange" {
-            view.backgroundColor = .orange
+        view.backgroundColor = .orange
         }
     //MARK: Textfield Delegate
     // When user press the return key in keyboard
