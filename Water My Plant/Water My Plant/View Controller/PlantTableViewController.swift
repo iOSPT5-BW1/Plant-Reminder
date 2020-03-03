@@ -13,7 +13,7 @@ class PlantTableViewController: UITableViewController {
     // MARK: Properties
     
     let reuseIdentifier = "PlantCell"
-    let plantController = PlantController()
+    var plantController = PlantController()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -66,6 +66,11 @@ class PlantTableViewController: UITableViewController {
             guard let addPlantVC = segue.destination as? AddPlantViewController else { return }
             addPlantVC.plantController = plantController
 //            addPlantVC.delegate = self
+        } else if segue.identifier == "PlantDetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? PlantDetailViewController {
+                detailVC.plant = plantController.plants[indexPath.row]
+            }
         }
         
     }

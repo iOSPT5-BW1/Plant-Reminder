@@ -167,10 +167,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
                     <connections>
-                        <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="xJl-7f-hF9"/>
-                        <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="Isk-IN-oqi"/>
-                        <outlet property="plantNicknameLabel" destination="Pbn-Fw-g1y" id="CdE-eu-o5M"/>
-                        <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="x94-Q9-lzq"/>
+                        <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="aFF-i7-s6D"/>
+                        <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
+                        <outlet property="plantNicknameLabel" destination="Pbn-Fw-g1y" id="BGH-iz-gzN"/>
+                        <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
