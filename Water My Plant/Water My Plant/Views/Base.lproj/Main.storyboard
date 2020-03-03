@@ -92,6 +92,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Plants" id="DMu-vI-XV2">
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="58r-M2-x3N">
+                            <connections>
+                                <segue destination="XmS-ii-ewa" kind="show" identifier="ThemeSelectionSegue" id="Jif-nr-UdQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DQJ-7U-q4O">
                             <connections>
                                 <segue destination="BF9-CO-fVT" kind="show" identifier="AddPlantModalSegue" id="vDH-zm-Laa"/>
@@ -117,23 +122,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XMC-9V-aJg">
-                                <rect key="frame" x="315" y="160" width="76.5" height="56"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbn-Fw-g1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-Kn-yA3">
-                                        <rect key="frame" x="0.0" y="35.5" width="76.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-EQ-Sus">
                                 <rect key="frame" x="20" y="460.5" width="374" height="391.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -147,35 +135,142 @@
                                     <constraint firstAttribute="width" secondItem="cJi-8e-ka7" secondAttribute="height" multiplier="1:1" id="igr-Jm-1CY"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-Kn-yA3">
+                                <rect key="frame" x="20" y="375" width="76.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="XMC-9V-aJg" secondAttribute="top" id="31H-pR-jRY"/>
-                            <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="XMC-9V-aJg" secondAttribute="trailing" constant="22.5" id="BrX-yb-ztG"/>
+                            <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="eUZ-Kn-yA3" secondAttribute="leading" id="7Ir-EW-AlI"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="3QL-gd-oOc" secondAttribute="leading" id="Eaf-H1-lIJ"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="40" id="EnG-fp-hxs"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="bottom" secondItem="3hJ-EQ-Sus" secondAttribute="bottom" constant="10" id="K3L-08-qdW"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="leading" secondItem="AMF-Ns-3yg" secondAttribute="leading" constant="20" id="N8j-Cf-C9y"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="3hJ-EQ-Sus" secondAttribute="leading" id="Ns2-ye-3Cg"/>
+                            <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="cJi-8e-ka7" secondAttribute="trailing" constant="194" id="OQK-XV-3vO"/>
+                            <constraint firstItem="eUZ-Kn-yA3" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="15" id="RzT-J4-RR8"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="3hJ-EQ-Sus" secondAttribute="trailing" constant="20" id="Zdo-sG-Vny"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="40" id="gYh-47-FwR"/>
-                            <constraint firstItem="XMC-9V-aJg" firstAttribute="leading" secondItem="cJi-8e-ka7" secondAttribute="trailing" constant="95" id="i9s-s5-Kjt"/>
                             <constraint firstItem="3QL-gd-oOc" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="40" id="oFJ-Ni-IYR"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="AMF-Ns-3yg" secondAttribute="top" constant="20" id="ssf-Fm-JJH"/>
+                            <constraint firstItem="GdP-Mn-LZK" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="top" constant="50" id="vd9-Ga-ZEb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AMF-Ns-3yg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
                     <connections>
-                        <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="aFF-i7-s6D"/>
+                        <outlet property="indoorOutdoorTextField" destination="q6x-ED-4ds" id="uaJ-zx-jJn"/>
                         <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
-                        <outlet property="plantNicknameLabel" destination="Pbn-Fw-g1y" id="BGH-iz-gzN"/>
                         <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
+                        <outlet property="sunlightRuquirementsTextField" destination="0d2-Mw-wgO" id="9Nt-n3-5Dp"/>
+                        <outlet property="waterRequirementsTextField" destination="jLg-mF-LYx" id="i9n-J2-wfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696" y="541"/>
+        </scene>
+        <!--Theme Selector-->
+        <scene sceneID="v1l-pC-l2H">
+            <objects>
+                <viewController id="XmS-ii-ewa" customClass="ThemeSelectionViewController" customModule="Water_My_Plant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7qt-VO-fXF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a theme: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njr-gS-dul">
+                                <rect key="frame" x="80" y="180" width="254" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rjz-9L-wI9">
+                                <rect key="frame" x="81" y="356.5" width="252" height="183"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="3fV-7D-SNX">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="43"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B38-fT-ynm">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="43"/>
+                                                <state key="normal" title="Light"/>
+                                                <connections>
+                                                    <action selector="lightThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="DnB-7e-4je"/>
+                                                    <action selector="lightThemeTapped:" destination="IVP-zB-vgL" eventType="touchUpInside" id="rGD-KT-g2L"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6R-J6-xa2">
+                                                <rect key="frame" x="201" y="0.0" width="51" height="43"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="darkThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="cFK-yI-Q7H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="cs3-DP-B5K">
+                                        <rect key="frame" x="0.0" y="83" width="252" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuX-Ni-jH7">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="Blue"/>
+                                                <connections>
+                                                    <action selector="blueThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="kMv-NY-r8b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-rB-H1Q">
+                                                <rect key="frame" x="201" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="Green"/>
+                                                <connections>
+                                                    <action selector="greenThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="KmY-vU-4fD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="G5K-K8-nk9">
+                                        <rect key="frame" x="0.0" y="153" width="252" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TS-lg-kBV">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="Pink"/>
+                                                <connections>
+                                                    <action selector="pinkThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="Qfx-Mt-wbs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwF-69-roR">
+                                                <rect key="frame" x="201" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="Orange"/>
+                                                <connections>
+                                                    <action selector="orangeThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="Jq7-4g-ukm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cs3-DP-B5K" firstAttribute="top" secondItem="rjz-9L-wI9" secondAttribute="top" constant="83" id="4zO-NW-RA1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rjz-9L-wI9" firstAttribute="centerY" secondItem="7qt-VO-fXF" secondAttribute="centerY" id="Fpc-H9-7HR"/>
+                            <constraint firstItem="1yQ-za-4Rl" firstAttribute="trailing" secondItem="Njr-gS-dul" secondAttribute="trailing" constant="80" id="Mhj-5S-cjU"/>
+                            <constraint firstItem="Njr-gS-dul" firstAttribute="leading" secondItem="1yQ-za-4Rl" secondAttribute="leading" constant="80" id="n4e-AL-z41"/>
+                            <constraint firstItem="rjz-9L-wI9" firstAttribute="centerX" secondItem="7qt-VO-fXF" secondAttribute="centerX" id="o9c-w1-QoR"/>
+                            <constraint firstItem="rjz-9L-wI9" firstAttribute="top" secondItem="Njr-gS-dul" secondAttribute="bottom" constant="150" id="sZF-py-kb3"/>
+                            <constraint firstItem="Njr-gS-dul" firstAttribute="top" secondItem="1yQ-za-4Rl" secondAttribute="top" constant="40" id="zEN-9w-bOu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1yQ-za-4Rl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Theme Selector" id="eiH-wT-hBR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BP7-ax-DAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IVP-zB-vgL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="-767"/>
         </scene>
         <!--Plant Information-->
         <scene sceneID="HsP-fL-Tna">

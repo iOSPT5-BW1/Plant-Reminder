@@ -8,9 +8,6 @@
 
 import UIKit
 
-//protocol AddPlantDelegate {
-//    func plantWasCreated(_ plant: Plant)
-//}
 
 class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,7 +15,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var plant: Plant?
     var plantController: PlantController?
-//    var delegate: AddPlantDelegate?
+    var themeHelper: ThemeHelper?
     
     // MARK: IBOutlets
     
@@ -85,6 +82,8 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        setTheme()
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -103,5 +102,23 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
         }
 
         scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+    
+    func setTheme() {
+        guard let preference = themeHelper?.themePreference else { return }
+        
+        if preference == "Light" {
+            view.backgroundColor = .white
+        } else if preference == "Dark" {
+        view.backgroundColor = .darkGray
+        } else if preference == "Blue" {
+        view.backgroundColor = .blue
+        } else if preference == "Green" {
+        view.backgroundColor = .green
+        } else if preference == "Pink" {
+        view.backgroundColor = .systemPink
+        } else if preference == "Orange" {
+        view.backgroundColor = .orange
+        }
     }
 }
