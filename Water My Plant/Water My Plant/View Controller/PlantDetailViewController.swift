@@ -30,7 +30,6 @@ class PlantDetailViewController: UIViewController {
       
 
     func updateViews() {
-        print("\(plant)")
         guard let plant = plant else { return }
         
             plantNicknameLabel.text = plant.nickname
