@@ -14,17 +14,32 @@ class PlantTableViewController: UITableViewController {
     
     let reuseIdentifier = "PlantCell"
     var plantController = PlantController()
+    let themeHelper = ThemeHelper()
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
         tableView.reloadData()
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         print("ViewDidLoad was called")
+        setTheme()
+         tableView.reloadData()
         tableView.tableFooterView = UIView()
+            
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Blue Rose")!)
+         UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "Blue Rose")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     // MARK: - Table view data source
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -52,38 +67,43 @@ class PlantTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
-//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-//        let addPlantVC = AddPlantViewController()
-//        addPlantVC.plantController = plantController
-//        let navController = UINavigationController(rootViewController: addPlantVC)
-//        addPlantVC.delegate = self
-//        present(navController, animated: true)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPlantModalSegue" {
             guard let addPlantVC = segue.destination as? AddPlantViewController else { return }
             addPlantVC.plantController = plantController
-//            addPlantVC.delegate = self
         } else if segue.identifier == "PlantDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PlantDetailViewController {
                 detailVC.plant = plantController.plants[indexPath.row]
             }
+        }   else if segue.identifier == "ThemeSelectionSegue" {
+                guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+                themeVC.themeHelper = themeHelper
+            }
         }
+    func setTheme() {
+           var preference = themeHelper.themePreference
+          
+           if preference == "Light" {
+               view.backgroundColor = .white
+           } else if preference == "Dark" {
+           view.backgroundColor = .darkGray
+           } else if preference == "Blue" {
+           view.backgroundColor = .blue
+           } else if preference == "Green" {
+           view.backgroundColor = .green
+           } else if preference == "Pink" {
+           view.backgroundColor = .systemPink
+           } else if preference == "Orange" {
+           view.backgroundColor = .orange
+           }
+       }
         
     }
     
-}
 
-//extension PlantTableViewController: AddPlantDelegate {
-//    func plantWasCreated(_ plant: Plant) {
-//        plantController.plants.append(plant)
-////        dismiss(animated: true, completion: nil)
-//        tableView.reloadData()
-//    }
-//}
+
 
 
 

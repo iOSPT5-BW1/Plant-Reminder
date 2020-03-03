@@ -18,6 +18,8 @@
 		443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF63240632EC008BA396 /* PlantTableViewCell.swift */; };
 		684A5A0C2407627700819D73 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0B2407627600819D73 /* Plant.swift */; };
 		684A5A0F2407629A00819D73 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0E2407629A00819D73 /* PlantController.swift */; };
+		68E40B35240E03D100DC0329 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */; };
+		68E40B37240E044B00DC0329 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B36240E044B00DC0329 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		44B39DEC240CB6EB00A44B26 /* Water My Plant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Water My Plant.entitlements"; sourceTree = "<group>"; };
 		684A5A0B2407627600819D73 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		684A5A0E2407629A00819D73 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
+		68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		68E40B36240E044B00DC0329 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,10 @@
 			isa = PBXGroup;
 			children = (
 				44B39DEC240CB6EB00A44B26 /* Water My Plant.entitlements */,
-				684A5A0D2407628600819D73 /* Controllers */,
 				684A5A0A2407626D00819D73 /* Model */,
 				443FEF5B24062549008BA396 /* Views */,
 				443FEF5A2406253A008BA396 /* View Controller */,
+				684A5A0D2407628600819D73 /* Controllers */,
 				443FEF592406251D008BA396 /* Recources */,
 				443FEF5324061EF6008BA396 /* Info.plist */,
 			);
@@ -85,6 +89,7 @@
 				443FEF4724061EF4008BA396 /* SceneDelegate.swift */,
 				443FEF4E24061EF6008BA396 /* Assets.xcassets */,
 				443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */,
+				68E40B36240E044B00DC0329 /* ThemeHelper.swift */,
 			);
 			path = Recources;
 			sourceTree = "<group>";
@@ -93,8 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				443FEF5D2406326C008BA396 /* PlantTableViewController.swift */,
-				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
 				443FEF612406329F008BA396 /* PlantDetailViewController.swift */,
+				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
+				68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 				443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */,
 				684A5A0C2407627700819D73 /* Plant.swift in Sources */,
 				443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */,
+				68E40B35240E03D100DC0329 /* ThemeSelectionViewController.swift in Sources */,
+				68E40B37240E044B00DC0329 /* ThemeHelper.swift in Sources */,
 				443FEF622406329F008BA396 /* PlantDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
