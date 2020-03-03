@@ -14,15 +14,10 @@ class PlantDetailViewController: UIViewController {
     let plantController = PlantController()
     
     // MARK: IBOutlets
-    @IBOutlet weak var plantNicknameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var optimalConditionsTextView: UITextView!
     @IBOutlet weak var plantDetailImageView: UIImageView!
     
-    var plant: Plant?
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateViews()
@@ -32,14 +27,11 @@ class PlantDetailViewController: UIViewController {
     func updateViews() {
         guard let plant = plant else { return }
         
-            plantNicknameLabel.text = plant.nickname
+        self.title = plant.nickname
+        
             speciesLabel.text = plant.species
             plantDetailImageView.image = UIImage(data: plant.plantImageData)
             optimalConditionsTextView.text = "Water \(plant.waterFrequency). \n Requires \(plant.sunlightAmount) sunlight. \n \(plant.indoorOrOutdoor) plant."
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateViews()
-    }
 }

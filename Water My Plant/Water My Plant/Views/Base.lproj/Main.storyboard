@@ -117,23 +117,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XMC-9V-aJg">
-                                <rect key="frame" x="315" y="160" width="76.5" height="56"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbn-Fw-g1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-Kn-yA3">
-                                        <rect key="frame" x="0.0" y="35.5" width="76.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-EQ-Sus">
                                 <rect key="frame" x="20" y="460.5" width="374" height="391.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -147,19 +130,25 @@
                                     <constraint firstAttribute="width" secondItem="cJi-8e-ka7" secondAttribute="height" multiplier="1:1" id="igr-Jm-1CY"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-Kn-yA3">
+                                <rect key="frame" x="20" y="375" width="76.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="XMC-9V-aJg" secondAttribute="top" id="31H-pR-jRY"/>
-                            <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="XMC-9V-aJg" secondAttribute="trailing" constant="22.5" id="BrX-yb-ztG"/>
+                            <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="eUZ-Kn-yA3" secondAttribute="leading" id="7Ir-EW-AlI"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="3QL-gd-oOc" secondAttribute="leading" id="Eaf-H1-lIJ"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="40" id="EnG-fp-hxs"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="bottom" secondItem="3hJ-EQ-Sus" secondAttribute="bottom" constant="10" id="K3L-08-qdW"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="leading" secondItem="AMF-Ns-3yg" secondAttribute="leading" constant="20" id="N8j-Cf-C9y"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="3hJ-EQ-Sus" secondAttribute="leading" id="Ns2-ye-3Cg"/>
+                            <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="cJi-8e-ka7" secondAttribute="trailing" constant="194" id="OQK-XV-3vO"/>
+                            <constraint firstItem="eUZ-Kn-yA3" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="15" id="RzT-J4-RR8"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="3hJ-EQ-Sus" secondAttribute="trailing" constant="20" id="Zdo-sG-Vny"/>
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="40" id="gYh-47-FwR"/>
-                            <constraint firstItem="XMC-9V-aJg" firstAttribute="leading" secondItem="cJi-8e-ka7" secondAttribute="trailing" constant="95" id="i9s-s5-Kjt"/>
                             <constraint firstItem="3QL-gd-oOc" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="40" id="oFJ-Ni-IYR"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="AMF-Ns-3yg" secondAttribute="top" constant="20" id="ssf-Fm-JJH"/>
                         </constraints>
@@ -169,7 +158,6 @@
                     <connections>
                         <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="aFF-i7-s6D"/>
                         <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
-                        <outlet property="plantNicknameLabel" destination="Pbn-Fw-g1y" id="BGH-iz-gzN"/>
                         <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
                     </connections>
                 </viewController>
