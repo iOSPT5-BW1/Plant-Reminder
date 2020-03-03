@@ -156,14 +156,17 @@
                             <constraint firstItem="3hJ-EQ-Sus" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="40" id="gYh-47-FwR"/>
                             <constraint firstItem="3QL-gd-oOc" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="40" id="oFJ-Ni-IYR"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="AMF-Ns-3yg" secondAttribute="top" constant="20" id="ssf-Fm-JJH"/>
+                            <constraint firstItem="GdP-Mn-LZK" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="top" constant="50" id="vd9-Ga-ZEb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AMF-Ns-3yg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
                     <connections>
-                        <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="aFF-i7-s6D"/>
+                        <outlet property="indoorOutdoorTextField" destination="q6x-ED-4ds" id="uaJ-zx-jJn"/>
                         <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
                         <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
+                        <outlet property="sunlightRuquirementsTextField" destination="0d2-Mw-wgO" id="9Nt-n3-5Dp"/>
+                        <outlet property="waterRequirementsTextField" destination="jLg-mF-LYx" id="i9n-J2-wfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

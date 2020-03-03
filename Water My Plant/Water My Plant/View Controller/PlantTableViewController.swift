@@ -23,6 +23,13 @@ class PlantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+            
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Blue Rose")!)
+         UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "Blue Rose")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     // MARK: - Table view data source
