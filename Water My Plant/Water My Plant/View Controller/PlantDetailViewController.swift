@@ -12,6 +12,7 @@ class PlantDetailViewController: UIViewController {
     
     var plant: Plant?
     let plantController = PlantController()
+    var themeHelper: ThemeHelper?
     
     // MARK: IBOutlets
     @IBOutlet weak var speciesLabel: UILabel!
@@ -21,7 +22,9 @@ class PlantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateViews()
+        setTheme()
     }
+    
       
 
     func updateViews() {
@@ -34,4 +37,26 @@ class PlantDetailViewController: UIViewController {
             optimalConditionsTextView.text = "Water \(plant.waterFrequency). \n Requires \(plant.sunlightAmount) sunlight. \n \(plant.indoorOrOutdoor) plant."
     }
     
+    func setTheme() {
+        guard let preference = themeHelper?.themePreference else { return }
+        
+        if preference == "Light" {
+            view.backgroundColor = .white
+        } else if preference == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if preference == "Blue" {
+            view.backgroundColor = .blue
+        } else if preference == "Green" {
+            view.backgroundColor = .green
+        } else if preference == "Pink" {
+            view.backgroundColor = .systemPink
+        } else if preference == "Orange" {
+            view.backgroundColor = .orange
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          setTheme()
+      }
 }

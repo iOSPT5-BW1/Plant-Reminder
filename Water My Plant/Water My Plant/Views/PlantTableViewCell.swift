@@ -13,7 +13,6 @@ import UserNotifications
 class PlantTableViewCell: UITableViewCell {
     
     // MARK: Properties
-//    let todaysDate = NSDate()
     
     var plant: Plant? {
         didSet {
@@ -52,30 +51,6 @@ class PlantTableViewCell: UITableViewCell {
     @objc func showLabel() {
             needsWaterButton.isHidden = false
         }
-   
-//
-//    func set24HrTimer() {
-//        let currentDate = NSDate()
-//        let newDate = NSDate(timeInterval: 86400, since: currentDate as Date)
-//
-//        UserDefaults.standard.setValue(newDate, forKey: "waitingDate")
-//        print("24 hours started")
-//
-//        //disable the button
-//
-//    }
-//func viewDidLoad() {
-//        if let waitingDate:NSDate = UserDefaults.standard.value(forKey: "waitingDate") as? NSDate {
-//            if (todaysDate.compare(waitingDate as Date) == ComparisonResult.orderedDescending) {
-//                print("show button")
-//
-//            }
-//            else {
-//                print("hide button")
-//
-//            }
-//        }
-//    }
     
     private func updateViews() {
         guard let plant = plant else { return }

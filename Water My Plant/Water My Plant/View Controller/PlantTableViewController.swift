@@ -14,6 +14,7 @@ class PlantTableViewController: UITableViewController {
     
     let reuseIdentifier = "PlantCell"
     var plantController = PlantController()
+    let themeHelper = ThemeHelper()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -52,24 +53,18 @@ class PlantTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
-//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-//        let addPlantVC = AddPlantViewController()
-//        addPlantVC.plantController = plantController
-//        let navController = UINavigationController(rootViewController: addPlantVC)
-//        addPlantVC.delegate = self
-//        present(navController, animated: true)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPlantModalSegue" {
             guard let addPlantVC = segue.destination as? AddPlantViewController else { return }
             addPlantVC.plantController = plantController
-//            addPlantVC.delegate = self
         } else if segue.identifier == "PlantDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PlantDetailViewController {
                 detailVC.plant = plantController.plants[indexPath.row]
+            } else if segue.identifier == "ThemeSelectionSegue" {
+                let themeVC = segue.destination as? ThemeSelectionViewController
+                themeVC?.themeHelper = themeHelper
             }
         }
         
@@ -77,13 +72,6 @@ class PlantTableViewController: UITableViewController {
     
 }
 
-//extension PlantTableViewController: AddPlantDelegate {
-//    func plantWasCreated(_ plant: Plant) {
-//        plantController.plants.append(plant)
-////        dismiss(animated: true, completion: nil)
-//        tableView.reloadData()
-//    }
-//}
 
 
 
