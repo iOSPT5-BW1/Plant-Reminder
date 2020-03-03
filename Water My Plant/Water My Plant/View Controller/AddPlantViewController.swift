@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol AddPlantDelegate {
-    func plantWasCreated(_ plant: Plant)
-}
+//protocol AddPlantDelegate {
+//    func plantWasCreated(_ plant: Plant)
+//}
 
 class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,7 +18,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var plant: Plant?
     var plantController: PlantController?
-    var delegate: AddPlantDelegate?
+//    var delegate: AddPlantDelegate?
     
     // MARK: IBOutlets
     

@@ -19,6 +19,7 @@ class PlantDetailViewController: UIViewController {
     @IBOutlet weak var optimalConditionsTextView: UITextView!
     @IBOutlet weak var plantDetailImageView: UIImageView!
     
+    var plant: Plant?
     
     
 
@@ -29,7 +30,6 @@ class PlantDetailViewController: UIViewController {
       
 
     func updateViews() {
-        print("\(plant)")
         guard let plant = plant else { return }
         
             plantNicknameLabel.text = plant.nickname
@@ -38,4 +38,8 @@ class PlantDetailViewController: UIViewController {
             optimalConditionsTextView.text = "Water \(plant.waterFrequency). \n Requires \(plant.sunlightAmount) sunlight. \n \(plant.indoorOrOutdoor) plant."
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+    }
 }

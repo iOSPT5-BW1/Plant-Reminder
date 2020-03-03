@@ -26,9 +26,8 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpg-dL-cK2">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="ByG-Zc-49T"/>
+                                                <constraint firstAttribute="width" constant="100" id="5RN-hk-xUU"/>
                                                 <constraint firstAttribute="width" secondItem="gpg-dL-cK2" secondAttribute="height" multiplier="1:1" id="KRz-xB-MSR"/>
-                                                <constraint firstAttribute="width" constant="100" id="xiF-9x-oQr"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="118" translatesAutoresizingMaskIntoConstraints="NO" id="JYi-er-DMg">
@@ -58,12 +57,13 @@
                                                     <rect key="frame" x="194.5" y="15" width="99.5" height="30"/>
                                                     <state key="normal" title="Needs Water"/>
                                                     <connections>
-                                                        <action selector="NeedsWater:" destination="QZC-JH-CSp" eventType="touchUpInside" id="qDS-FY-6cr"/>
+                                                        <action selector="needsWater:" destination="QZC-JH-CSp" eventType="touchUpInside" id="YEH-jU-VSL"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Lra-Dn-aq9" firstAttribute="centerY" secondItem="JYi-er-DMg" secondAttribute="centerY" id="c1G-lx-xwP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lra-Dn-aq9" secondAttribute="trailing" id="md3-hE-hIo"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -78,6 +78,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="needsWaterButton" destination="Lra-Dn-aq9" id="mvT-a1-UV2"/>
                                     <outlet property="nicknameLabel" destination="eu8-v9-PAw" id="QMf-Y7-4WX"/>
                                     <outlet property="plantImage" destination="gpg-dL-cK2" id="YEp-nj-Ni1"/>
                                     <outlet property="speciesLabel" destination="6Kc-rC-Gl7" id="KcF-gL-IXh"/>

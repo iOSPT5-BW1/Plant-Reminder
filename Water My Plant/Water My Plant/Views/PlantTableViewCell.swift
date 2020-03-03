@@ -8,9 +8,12 @@
 
 import UIKit
 
+import UserNotifications
+
 class PlantTableViewCell: UITableViewCell {
     
     // MARK: Properties
+//    let todaysDate = NSDate()
     
     var plant: Plant? {
         didSet {
@@ -23,14 +26,58 @@ class PlantTableViewCell: UITableViewCell {
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var needsWaterButton: UIButton!
     
     // MARK: IBActions
     
-    @IBAction func needsWater(_ sender: Any) {
-    }
+    @IBAction func needsWater(_ sender: UIButton) {
+//        set24HrTimer()
+          if !needsWaterButton.isHidden {
+                needsWaterButton.isHidden = true
+                Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(showLabel), userInfo: nil, repeats: false)
+            }
+        guard let nicknameLabel = nicknameLabel.text else { return }
+        let content = UNMutableNotificationContent()
+        content.title = "Your plant is thirsty!"
+        content.subtitle = "It's time to water \(nicknameLabel)!"
+        content.body = "It's time to water one of your plants!"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "TimerUp", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+
+    @objc func showLabel() {
+            needsWaterButton.isHidden = false
+        }
+   
+//
+//    func set24HrTimer() {
+//        let currentDate = NSDate()
+//        let newDate = NSDate(timeInterval: 86400, since: currentDate as Date)
+//
+//        UserDefaults.standard.setValue(newDate, forKey: "waitingDate")
+//        print("24 hours started")
+//
+//        //disable the button
+//
+//    }
+//func viewDidLoad() {
+//        if let waitingDate:NSDate = UserDefaults.standard.value(forKey: "waitingDate") as? NSDate {
+//            if (todaysDate.compare(waitingDate as Date) == ComparisonResult.orderedDescending) {
+//                print("show button")
+//
+//            }
+//            else {
+//                print("hide button")
+//
+//            }
+//        }
+//    }
     
-    
-    func updateViews() {
+    private func updateViews() {
         guard let plant = plant else { return }
         
         plantImage.image = UIImage(data: plant.plantImageData)

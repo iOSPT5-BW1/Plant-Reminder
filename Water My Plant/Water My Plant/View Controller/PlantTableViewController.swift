@@ -53,13 +53,13 @@ class PlantTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        let addPlantVC = AddPlantViewController()
-        addPlantVC.plantController = plantController
-        let navController = UINavigationController(rootViewController: addPlantVC)
-        addPlantVC.delegate = self
-        present(navController, animated: true)
-    }
+//    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+//        let addPlantVC = AddPlantViewController()
+//        addPlantVC.plantController = plantController
+//        let navController = UINavigationController(rootViewController: addPlantVC)
+//        addPlantVC.delegate = self
+//        present(navController, animated: true)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPlantModalSegue" {
@@ -77,12 +77,13 @@ class PlantTableViewController: UITableViewController {
     
 }
 
-extension PlantTableViewController: AddPlantDelegate {
-    func plantWasCreated(_ plant: Plant) {
-        plantController.plants.append(plant)
-        tableView.reloadData()
-    }
-}
+//extension PlantTableViewController: AddPlantDelegate {
+//    func plantWasCreated(_ plant: Plant) {
+//        plantController.plants.append(plant)
+////        dismiss(animated: true, completion: nil)
+//        tableView.reloadData()
+//    }
+//}
 
 
 
