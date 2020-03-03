@@ -165,6 +165,12 @@
                         <viewLayoutGuide key="safeArea" id="AMF-Ns-3yg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
+                    <connections>
+                        <outlet property="optimalConditionsTextView" destination="3hJ-EQ-Sus" id="aFF-i7-s6D"/>
+                        <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
+                        <outlet property="plantNicknameLabel" destination="Pbn-Fw-g1y" id="BGH-iz-gzN"/>
+                        <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

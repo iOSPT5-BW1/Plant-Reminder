@@ -10,8 +10,8 @@ import UIKit
 
 class PlantDetailViewController: UIViewController {
     
-    var plantController: PlantController?
     var plant: Plant?
+    let plantController = PlantController()
     
     // MARK: IBOutlets
     @IBOutlet weak var plantNicknameLabel: UILabel!
@@ -24,19 +24,18 @@ class PlantDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+        self.updateViews()
     }
+      
 
     func updateViews() {
+        print("\(plant)")
         guard let plant = plant else { return }
-        plantNicknameLabel.text = plant.nickname
-        speciesLabel.text = plant.species
-        optimalConditionsTextView.text = """
-        This plant should be watered \(plant.waterFrequency).
-        This plant requires \(plant.sunlightAmount) sunlight.
-        This plant is a(n) \(plant.indoorOrOutdoor) plant.
-"""
-        self.title = plant.nickname
+        
+            plantNicknameLabel.text = plant.nickname
+            speciesLabel.text = plant.species
+            plantDetailImageView.image = UIImage(data: plant.plantImageData)
+            optimalConditionsTextView.text = "Water \(plant.waterFrequency). \n Requires \(plant.sunlightAmount) sunlight. \n \(plant.indoorOrOutdoor) plant."
     }
     
 }

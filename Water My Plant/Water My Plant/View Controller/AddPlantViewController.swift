@@ -58,7 +58,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
                         !indoorOutdoor.isEmpty,
                         let photoData = plantImage.image?.pngData() {
                         plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
-//                        delegate?.plantWasCreated(plant)
+                        plantController.saveToPersistentStore()
                     } else {
                 return
             }
