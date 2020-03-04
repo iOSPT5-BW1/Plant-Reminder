@@ -89,7 +89,7 @@ class PlantTableViewController: UITableViewController {
            } else if preference == "Dark" {
            view.backgroundColor = .darkGray
            } else if preference == "Blue" {
-           view.backgroundColor = .blue
+           view.backgroundColor = .cyan
            } else if preference == "Green" {
            view.backgroundColor = .green
            } else if preference == "Pink" {
