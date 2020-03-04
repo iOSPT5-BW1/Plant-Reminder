@@ -11,7 +11,7 @@ import UIKit
 
 struct Plant: Codable, Equatable {
     var nickname: String
-    var species: String
+    var species: String?
     var waterFrequency: String
     var sunlightAmount: String
     var indoorOrOutdoor: String

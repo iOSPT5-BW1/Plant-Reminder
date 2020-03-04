@@ -13,7 +13,6 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     // MARK: Properties
     
-    var plant: Plant?
     var plantController: PlantController?
     let themeHelper = ThemeHelper()
     
@@ -55,21 +54,11 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
                         !indoorOutdoor.isEmpty,
                         let photoData = plantImage.image?.pngData() {
                         plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
-                        plantController.saveToPersistentStore()
                     } else {
                 return
             }
         navigationController?.popViewController(animated: true)
         }
-
-    
-
-    func updateViews() {
-           guard let plant = plant else { return }
-           plantImage.image = UIImage(data: plant.plantImageData)
-            plantNickname.text = plant.nickname
-            plantSpecies.text = plant.species
-       }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        guard let image = info[.originalImage] as? UIImage else {
@@ -81,7 +70,8 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+        setTheme()
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -115,7 +105,7 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
         } else if preference == "Dark" {
         view.backgroundColor = .darkGray
         } else if preference == "Blue" {
-        view.backgroundColor = .blue
+        view.backgroundColor = .cyan
         } else if preference == "Green" {
         view.backgroundColor = .green
         } else if preference == "Pink" {
