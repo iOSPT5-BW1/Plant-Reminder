@@ -30,27 +30,27 @@ class PlantTableViewCell: UITableViewCell {
     // MARK: IBActions
     
     @IBAction func needsWater(_ sender: UIButton) {
-//        set24HrTimer()
-          if !needsWaterButton.isHidden {
-                needsWaterButton.isHidden = true
-                Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(showLabel), userInfo: nil, repeats: false)
-            }
+        
+        if !needsWaterButton.isHidden {
+            needsWaterButton.isHidden = true
+            Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(showLabel), userInfo: nil, repeats: false)
+        }
         guard let nicknameLabel = nicknameLabel.text else { return }
         let content = UNMutableNotificationContent()
         content.title = "Your plant is thirsty!"
         content.subtitle = "It's time to water \(nicknameLabel)!"
-        content.body = "It's time to water one of your plants!"
+        content.body = "It is time to water your plant!"
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
         
         let request = UNNotificationRequest(identifier: "TimerUp", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        }
-
+    }
+    
     @objc func showLabel() {
-            needsWaterButton.isHidden = false
-        }
+        needsWaterButton.isHidden = false
+    }
     
     private func updateViews() {
         guard let plant = plant else { return }
@@ -60,5 +60,5 @@ class PlantTableViewCell: UITableViewCell {
         speciesLabel.text = plant.species
         
     }
-
+    
 }

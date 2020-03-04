@@ -13,9 +13,8 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     // MARK: Properties
     
-    var plant: Plant?
     var plantController: PlantController?
-    var themeHelper: ThemeHelper?
+    let themeHelper = ThemeHelper()
     
     // MARK: IBOutlets
     
@@ -55,21 +54,11 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
                         !indoorOutdoor.isEmpty,
                         let photoData = plantImage.image?.pngData() {
                         plantController.createPlant(nickname: nicknameText, species: speciesText, waterFrequency: waterText, sunlightAmount: sunlightText, indoorOrOutdoor: indoorOutdoor, plantImageData: photoData)
-                        plantController.saveToPersistentStore()
                     } else {
                 return
             }
         navigationController?.popViewController(animated: true)
         }
-
-    
-
-    func updateViews() {
-           guard let plant = plant else { return }
-           plantImage.image = UIImage(data: plant.plantImageData)
-            plantNickname.text = plant.nickname
-            plantSpecies.text = plant.species
-       }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        guard let image = info[.originalImage] as? UIImage else {
@@ -81,12 +70,16 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
         setTheme()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
@@ -105,8 +98,8 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func setTheme() {
-        guard let preference = themeHelper?.themePreference else { return }
-        
+        var preference = themeHelper.themePreference
+       
         if preference == "Light" {
             view.backgroundColor = .white
         } else if preference == "Dark" {
@@ -121,4 +114,6 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
         view.backgroundColor = .orange
         }
     }
+
+   
 }
