@@ -67,7 +67,7 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
     
     
     func setTheme() {
-        var preference = themeHelper.themePreference
+        var preference = themeHelper?.themePreference
         
         if preference == "Light" {
             view.backgroundColor = .white

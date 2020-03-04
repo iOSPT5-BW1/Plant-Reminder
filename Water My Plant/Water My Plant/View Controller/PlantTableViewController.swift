@@ -100,7 +100,6 @@ class PlantTableViewController: UITableViewController {
        }
         
     }
-}
 
 extension PlantTableViewController: plantUpdateDelegate {
     func didUpdatePlant() {
