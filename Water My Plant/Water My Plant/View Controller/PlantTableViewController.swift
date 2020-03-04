@@ -10,11 +10,12 @@ import UIKit
 
 class PlantTableViewController: UITableViewController {
     
+    
     // MARK: Properties
     
-    let reuseIdentifier = "PlantCell"
-    var plantController = PlantController()
+    let plantController = PlantController()
     let themeHelper = ThemeHelper()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,29 +30,21 @@ class PlantTableViewController: UITableViewController {
         setTheme()
          tableView.reloadData()
         tableView.tableFooterView = UIView()
-            
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Blue Rose")!)
-         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "Blue Rose")?.draw(in: self.view.bounds)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     // MARK: - Table view data source
     
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plantController.plants.count    }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCell", for: indexPath) as? PlantTableViewCell else { return UITableViewCell() }
-
+        
         
         let plant = plantController.plants[indexPath.row]
         cell.plant = plant
@@ -75,7 +68,13 @@ class PlantTableViewController: UITableViewController {
         } else if segue.identifier == "PlantDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PlantDetailViewController {
-                detailVC.plant = plantController.plants[indexPath.row]
+                let plant = plantController.plants[indexPath.row]
+                detailVC.plant = plant
+                detailVC.plantController = plantController
+                detailVC.delegate = self
+            } else if segue.identifier == "ThemeSelectionSegue" {
+                let themeVC = segue.destination as? ThemeSelectionViewController
+                themeVC?.themeHelper = themeHelper
             }
         }   else if segue.identifier == "ThemeSelectionSegue" {
                 guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
@@ -101,10 +100,13 @@ class PlantTableViewController: UITableViewController {
        }
         
     }
-    
+}
+
+extension PlantTableViewController: plantUpdateDelegate {
+    func didUpdatePlant() {
+        tableView.reloadData()
+    }
+}
 
 
 
-
-
-    

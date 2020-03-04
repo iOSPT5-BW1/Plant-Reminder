@@ -11,11 +11,11 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-}
-
+    }
+    
     // MARK: - IBActions
     
     @IBAction func lightThemeTapped(_ sender: Any) {
