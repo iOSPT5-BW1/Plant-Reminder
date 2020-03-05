@@ -15,7 +15,7 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
     var plant: Plant?
     
     var plantController: PlantController?
-    var themeHelper: ThemeHelper?
+    var themeHelper = ThemeHelper()
     weak var delegate: plantUpdateDelegate!
     
     // MARK: IBOutlets
@@ -65,9 +65,14 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+    }
+    
     
     func setTheme() {
-        var preference = themeHelper?.themePreference
+        let preference = themeHelper.themePreference
         
         if preference == "Light" {
             view.backgroundColor = .white
@@ -82,11 +87,6 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
         } else if preference == "Orange" {
             view.backgroundColor = .orange
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setTheme()
     }
     
     //MARK: Textfield Delegate

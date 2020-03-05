@@ -30,9 +30,9 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func addPhotoTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()
-               imagePicker.allowsEditing = true
-               imagePicker.delegate = self
-               present(imagePicker, animated: true)
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -84,36 +84,35 @@ class AddPlantViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
+        
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
+        
         if notification.name == UIResponder.keyboardWillHideNotification {
             scrollView.contentInset = .zero
         } else {
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
-
+        
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
     func setTheme() {
-        var preference = themeHelper.themePreference
-       
+        let preference = themeHelper.themePreference
+        
         if preference == "Light" {
             view.backgroundColor = .white
         } else if preference == "Dark" {
-        view.backgroundColor = .darkGray
+            view.backgroundColor = .darkGray
         } else if preference == "Blue" {
-        view.backgroundColor = .cyan
+            view.backgroundColor = .cyan
         } else if preference == "Green" {
-        view.backgroundColor = .green
+            view.backgroundColor = .green
         } else if preference == "Pink" {
-        view.backgroundColor = .systemPink
+            view.backgroundColor = .systemPink
         } else if preference == "Orange" {
-        view.backgroundColor = .orange
+            view.backgroundColor = .orange
         }
     }
-
-   
 }
+

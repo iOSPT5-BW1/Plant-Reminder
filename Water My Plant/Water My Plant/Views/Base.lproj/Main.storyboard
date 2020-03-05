@@ -186,6 +186,7 @@
                         <constraints>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="eUZ-Kn-yA3" secondAttribute="leading" id="7Ir-EW-AlI"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="leading" secondItem="3QL-gd-oOc" secondAttribute="leading" id="Eaf-H1-lIJ"/>
+                            <constraint firstItem="wce-K7-DAU" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="30" id="Ivp-TT-eRW"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="cJi-8e-ka7" secondAttribute="trailing" constant="194" id="OQK-XV-3vO"/>
                             <constraint firstItem="eUZ-Kn-yA3" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="15" id="RzT-J4-RR8"/>
                             <constraint firstItem="wce-K7-DAU" firstAttribute="leading" secondItem="AMF-Ns-3yg" secondAttribute="leading" constant="10" id="XOy-Eu-u23"/>
@@ -194,14 +195,16 @@
                             <constraint firstItem="3QL-gd-oOc" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="40" id="oFJ-Ni-IYR"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="wce-K7-DAU" secondAttribute="trailing" constant="10" id="olC-NC-MiB"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="AMF-Ns-3yg" secondAttribute="top" constant="20" id="ssf-Fm-JJH"/>
-                            <constraint firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="top" constant="50" id="vd9-Ga-ZEb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AMF-Ns-3yg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
                     <connections>
+                        <outlet property="indoorOutdoorTextField" destination="9g2-18-1kI" id="xj9-fV-XeZ"/>
                         <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
                         <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
+                        <outlet property="sunlightRuquirementsTextField" destination="Bfk-G6-lLy" id="7r4-UU-QxY"/>
+                        <outlet property="waterRequirementsTextField" destination="cpY-eI-k4Y" id="ijd-03-1UD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwi-AH-g4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -319,7 +322,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fkc-Q0-EaB">
-                                        <rect key="frame" x="20" y="20" width="374" height="574"/>
+                                        <rect key="frame" x="20" y="20" width="374" height="504"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-go-P8u">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="209"/>
@@ -394,25 +397,14 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUY-Vq-0K7">
-                                                <rect key="frame" x="0.0" y="524" width="374" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="SRb-ak-SWx"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="574" id="8Uu-s2-ZV1"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="fkc-Q0-EaB" firstAttribute="top" secondItem="u15-1P-poI" secondAttribute="top" constant="20" id="Gay-0V-Hsf"/>
                                     <constraint firstAttribute="trailing" secondItem="fkc-Q0-EaB" secondAttribute="trailing" constant="20" id="Is4-eV-0gM"/>
                                     <constraint firstItem="fkc-Q0-EaB" firstAttribute="centerX" secondItem="u15-1P-poI" secondAttribute="centerX" id="QkC-0d-ZsQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="fkc-Q0-EaB" secondAttribute="bottom" constant="172" id="hhj-jv-rer"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fkc-Q0-EaB" secondAttribute="bottom" id="jgX-rG-Xby"/>
+                                    <constraint firstAttribute="bottom" secondItem="fkc-Q0-EaB" secondAttribute="bottom" constant="242" id="hhj-jv-rer"/>
                                     <constraint firstItem="fkc-Q0-EaB" firstAttribute="leading" secondItem="u15-1P-poI" secondAttribute="leading" constant="20" id="vIV-MO-DAW"/>
                                 </constraints>
                             </scrollView>

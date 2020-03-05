@@ -21,14 +21,13 @@ class PlantTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         setTheme()
         tableView.reloadData()
-       
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         print("ViewDidLoad was called")
         setTheme()
-         tableView.reloadData()
+        tableView.reloadData()
         tableView.tableFooterView = UIView()
     }
     
@@ -77,28 +76,26 @@ class PlantTableViewController: UITableViewController {
                 themeVC?.themeHelper = themeHelper
             }
         }   else if segue.identifier == "ThemeSelectionSegue" {
-                guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
-                themeVC.themeHelper = themeHelper
-            }
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeVC.themeHelper = themeHelper
         }
+    }
     func setTheme() {
-           var preference = themeHelper.themePreference
-          
-           if preference == "Light" {
-               view.backgroundColor = .white
-           } else if preference == "Dark" {
-           view.backgroundColor = .darkGray
-           } else if preference == "Blue" {
-           view.backgroundColor = .cyan
-           } else if preference == "Green" {
-           view.backgroundColor = .green
-           } else if preference == "Pink" {
-           view.backgroundColor = .systemPink
-           } else if preference == "Orange" {
-           view.backgroundColor = .orange
-           }
-       }
+        let preference = themeHelper.themePreference
         
+        if preference == "Light" {
+            view.backgroundColor = .white
+        } else if preference == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if preference == "Blue" {
+            view.backgroundColor = .cyan
+        } else if preference == "Green" {
+            view.backgroundColor = .green
+        } else if preference == "Pink" {
+            view.backgroundColor = .systemPink
+        } else if preference == "Orange" {
+            view.backgroundColor = .orange
+        }
     }
 
 extension PlantTableViewController: plantUpdateDelegate {
@@ -106,6 +103,8 @@ extension PlantTableViewController: plantUpdateDelegate {
         tableView.reloadData()
     }
 }
+
+
 
 
 
