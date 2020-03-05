@@ -30,19 +30,19 @@
                                                 <constraint firstAttribute="width" secondItem="gpg-dL-cK2" secondAttribute="height" multiplier="1:1" id="KRz-xB-MSR"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="118" translatesAutoresizingMaskIntoConstraints="NO" id="JYi-er-DMg">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="JYi-er-DMg">
                                             <rect key="frame" x="110" y="20" width="294" height="60"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OY5-xl-OqR">
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OY5-xl-OqR">
                                                     <rect key="frame" x="0.0" y="0.0" width="76.5" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-v9-PAw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-v9-PAw">
                                                             <rect key="frame" x="0.0" y="0.0" width="76.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-rC-Gl7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-rC-Gl7">
                                                             <rect key="frame" x="0.0" y="40.5" width="76.5" height="19.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19.5" id="MmA-us-qLg"/>
@@ -54,7 +54,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-Dn-aq9">
-                                                    <rect key="frame" x="194.5" y="15" width="99.5" height="30"/>
+                                                    <rect key="frame" x="176.5" y="0.0" width="117.5" height="60"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Needs Water"/>
                                                     <connections>
@@ -193,6 +193,7 @@
                             <constraint firstItem="sud-8P-PZH" firstAttribute="centerX" secondItem="wce-K7-DAU" secondAttribute="centerX" id="eFf-Y4-0V8"/>
                             <constraint firstItem="sud-8P-PZH" firstAttribute="top" secondItem="9g2-18-1kI" secondAttribute="bottom" constant="27" id="i41-o9-x0e"/>
                             <constraint firstItem="3QL-gd-oOc" firstAttribute="top" secondItem="cJi-8e-ka7" secondAttribute="bottom" constant="40" id="oFJ-Ni-IYR"/>
+                            <constraint firstItem="wce-K7-DAU" firstAttribute="top" secondItem="3QL-gd-oOc" secondAttribute="bottom" constant="30" id="oVY-FX-31R"/>
                             <constraint firstItem="AMF-Ns-3yg" firstAttribute="trailing" secondItem="wce-K7-DAU" secondAttribute="trailing" constant="10" id="olC-NC-MiB"/>
                             <constraint firstItem="cJi-8e-ka7" firstAttribute="top" secondItem="AMF-Ns-3yg" secondAttribute="top" constant="20" id="ssf-Fm-JJH"/>
                         </constraints>

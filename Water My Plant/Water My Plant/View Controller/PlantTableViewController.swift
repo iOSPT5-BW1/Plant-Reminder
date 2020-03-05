@@ -97,6 +97,7 @@ class PlantTableViewController: UITableViewController {
             view.backgroundColor = .orange
         }
     }
+}
 
 extension PlantTableViewController: plantUpdateDelegate {
     func didUpdatePlant() {

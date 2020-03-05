@@ -50,6 +50,11 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
         setTheme()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+    }
+    
     
     
     func updateViews() {
