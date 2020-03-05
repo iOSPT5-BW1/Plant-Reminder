@@ -8,34 +8,115 @@
 
 import UIKit
 
-class PlantDetailViewController: UIViewController {
+class PlantDetailViewController: UIViewController, UITextFieldDelegate {
     
-    var plantController: PlantController?
+    // MARK: Properties
+    
     var plant: Plant?
     
+    var plantController: PlantController?
+    var themeHelper = ThemeHelper()
+    weak var delegate: plantUpdateDelegate!
+    
     // MARK: IBOutlets
-    @IBOutlet weak var plantNicknameLabel: UILabel!
+    
     @IBOutlet weak var speciesLabel: UILabel!
-    @IBOutlet weak var optimalConditionsTextView: UITextView!
     @IBOutlet weak var plantDetailImageView: UIImageView!
+    @IBOutlet weak var waterRequirementsTextField: UITextField!
+    @IBOutlet weak var sunlightRuquirementsTextField: UITextField!
+    @IBOutlet weak var indoorOutdoorTextField: UITextField!
     
+    // MARK: IBActions
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let plant = plant else { return }
+        guard let controller = plantController else { return }
+        if let waterfrequency = waterRequirementsTextField.text,
+            let sunlightAmount = sunlightRuquirementsTextField.text,
+            let indoorOrOutdoor = indoorOutdoorTextField.text,
+            !waterfrequency.isEmpty,
+            !sunlightAmount.isEmpty,
+            !indoorOrOutdoor.isEmpty{
+            
+            controller.updatePlant(plant: plant, waterFrequency: waterfrequency, sunlightAmount: sunlightAmount, indoorOrOutdoor: indoorOrOutdoor)
+            delegate.didUpdatePlant()
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-    }
-
-    func updateViews() {
-        plantNicknameLabel.text = plant?.nickname
-        speciesLabel.text = plant?.species
-        optimalConditionsTextView.text = """
-        This plant should be watered \(plant?.waterFrequency).
-        This plant requires \(plant?.sunlightAmount) sunlight.
-        This plant is a(n) \(plant?.indoorOrOutdoor) plant.
-"""
-        self.title = plant?.nickname
+        setTheme()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+    }
+    
+    
+    
+    func updateViews() {
+        guard let plant = plant else { return }
+        
+        self.title = plant.nickname
+        
+        speciesLabel.text = plant.species
+        plantDetailImageView.image = UIImage(data: plant.plantImageData)
+        waterRequirementsTextField.text = (plant.waterFrequency)
+        sunlightRuquirementsTextField.text = (plant.sunlightAmount)
+        indoorOutdoorTextField.text = (plant.indoorOrOutdoor)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+    }
+    
+    
+    func setTheme() {
+        let preference = themeHelper.themePreference
+        
+        if preference == "Light" {
+            view.backgroundColor = .white
+        } else if preference == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if preference == "Blue" {
+            view.backgroundColor = .cyan
+        } else if preference == "Green" {
+            view.backgroundColor = .green
+        } else if preference == "Pink" {
+            view.backgroundColor = .systemPink
+        } else if preference == "Orange" {
+            view.backgroundColor = .orange
+        }
+    }
+    
+    //MARK: Textfield Delegate
+    
+    // When user press the return key in keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // It is called before text field become active
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.backgroundColor = UIColor.lightGray
+        return true
+    }
+
+    // It is called when text field going to inactive
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.backgroundColor = UIColor.white
+        return true
+    }
+
+    // It is called each time user type a character by keyboard
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
 }
+

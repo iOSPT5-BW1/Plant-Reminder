@@ -9,23 +9,26 @@
 import Foundation
 import UIKit
 
+protocol plantUpdateDelegate: class {
+    func didUpdatePlant()
+}
+
 class PlantController {
     
     var plants: [Plant] = []
-
-    func createPlant(nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
+    
+    func createPlant(nickname: String, species: String?, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
         let plant = Plant(nickname: nickname, species: species, waterFrequency: waterFrequency, sunlightAmount: sunlightAmount, indoorOrOutdoor: indoorOrOutdoor, plantImageData: plantImageData)
         plants.append(plant)
+        saveToPersistentStore()
     }
     
-    func updatePlant(plant: Plant, nickname: String, species: String, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String, plantImageData: Data) {
-        if let plantList = plants.firstIndex(of: plant) {
-            plants[plantList].nickname = nickname
-            plants[plantList].species = species
-            plants[plantList].waterFrequency = waterFrequency
-            plants[plantList].sunlightAmount = sunlightAmount
-            plants[plantList].indoorOrOutdoor = indoorOrOutdoor
-            plants[plantList].plantImageData = plantImageData
+    func updatePlant(plant: Plant, waterFrequency: String, sunlightAmount: String, indoorOrOutdoor: String) {
+        if let index = plants.firstIndex(of: plant) {
+            plants[index].waterFrequency = waterFrequency
+            plants[index].sunlightAmount = sunlightAmount
+            plants[index].indoorOrOutdoor = indoorOrOutdoor
+            saveToPersistentStore()
         }
     }
     
@@ -64,7 +67,4 @@ class PlantController {
             print("Error loading plant data: \(error)")
         }
     }
-    
-    
-    
 }

@@ -18,6 +18,8 @@
 		443FEF64240632EC008BA396 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FEF63240632EC008BA396 /* PlantTableViewCell.swift */; };
 		684A5A0C2407627700819D73 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0B2407627600819D73 /* Plant.swift */; };
 		684A5A0F2407629A00819D73 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A5A0E2407629A00819D73 /* PlantController.swift */; };
+		68E40B35240E03D100DC0329 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */; };
+		68E40B37240E044B00DC0329 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E40B36240E044B00DC0329 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,11 @@
 		443FEF5F2406328D008BA396 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		443FEF612406329F008BA396 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		443FEF63240632EC008BA396 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		44B39DEC240CB6EB00A44B26 /* Water My Plant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Water My Plant.entitlements"; sourceTree = "<group>"; };
 		684A5A0B2407627600819D73 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		684A5A0E2407629A00819D73 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
+		68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		68E40B36240E044B00DC0329 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +71,11 @@
 		443FEF4424061EF4008BA396 /* Water My Plant */ = {
 			isa = PBXGroup;
 			children = (
-				684A5A0D2407628600819D73 /* Controllers */,
+				44B39DEC240CB6EB00A44B26 /* Water My Plant.entitlements */,
 				684A5A0A2407626D00819D73 /* Model */,
 				443FEF5B24062549008BA396 /* Views */,
 				443FEF5A2406253A008BA396 /* View Controller */,
+				684A5A0D2407628600819D73 /* Controllers */,
 				443FEF592406251D008BA396 /* Recources */,
 				443FEF5324061EF6008BA396 /* Info.plist */,
 			);
@@ -83,6 +89,7 @@
 				443FEF4724061EF4008BA396 /* SceneDelegate.swift */,
 				443FEF4E24061EF6008BA396 /* Assets.xcassets */,
 				443FEF5024061EF6008BA396 /* LaunchScreen.storyboard */,
+				68E40B36240E044B00DC0329 /* ThemeHelper.swift */,
 			);
 			path = Recources;
 			sourceTree = "<group>";
@@ -91,8 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				443FEF5D2406326C008BA396 /* PlantTableViewController.swift */,
-				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
 				443FEF612406329F008BA396 /* PlantDetailViewController.swift */,
+				443FEF5F2406328D008BA396 /* AddPlantViewController.swift */,
+				68E40B34240E03D100DC0329 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -200,6 +208,8 @@
 				443FEF602406328D008BA396 /* AddPlantViewController.swift in Sources */,
 				684A5A0C2407627700819D73 /* Plant.swift in Sources */,
 				443FEF5E2406326C008BA396 /* PlantTableViewController.swift in Sources */,
+				68E40B35240E03D100DC0329 /* ThemeSelectionViewController.swift in Sources */,
+				68E40B37240E044B00DC0329 /* ThemeHelper.swift in Sources */,
 				443FEF622406329F008BA396 /* PlantDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,14 +354,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Water My Plant/Water My Plant.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Water My Plant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Breena-Greek.Water-My-Plant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.breenagreek.watermyplant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,13 +375,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Water My Plant/Water My Plant.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Water My Plant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Breena-Greek.Water-My-Plant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.breenagreek.watermyplant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
