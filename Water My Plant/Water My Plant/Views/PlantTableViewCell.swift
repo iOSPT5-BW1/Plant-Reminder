@@ -38,8 +38,8 @@ class PlantTableViewCell: UITableViewCell {
         guard let nicknameLabel = nicknameLabel.text else { return }
         let content = UNMutableNotificationContent()
         content.title = "Your plant is thirsty!"
-        content.subtitle = "It's time to water \(nicknameLabel)!"
-        content.body = "Make sure you water your plant today!"
+        content.subtitle = "It's time to water \(nicknameLabel)."
+        content.body = "Make sure you water your plant today."
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
