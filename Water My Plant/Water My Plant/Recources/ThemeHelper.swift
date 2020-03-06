@@ -37,6 +37,10 @@ class ThemeHelper {
         UserDefaults.standard.set("Orange", forKey: themePreferenceKey)
     }
     
+    func setThemePreferenceToRose() {
+        UserDefaults.standard.set("Plant", forKey: themePreferenceKey)
+    }
+    
     var themePreference: String? {
         return UserDefaults.standard.string(forKey: themePreferenceKey)
     }

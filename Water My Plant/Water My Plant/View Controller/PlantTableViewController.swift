@@ -85,19 +85,53 @@ class PlantTableViewController: UITableViewController {
         
         if preference == "Light" {
             view.backgroundColor = .white
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Dark" {
             view.backgroundColor = .darkGray
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Blue" {
             view.backgroundColor = .cyan
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Green" {
             view.backgroundColor = .green
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Pink" {
-            view.backgroundColor = .systemPink
+            view.backgroundColor = .magenta
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Orange" {
             view.backgroundColor = .orange
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
+        } else if preference == "Plant" {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "Plant")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            let color = UIColor.white
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
         }
     }
 }
+
 
 extension PlantTableViewController: plantUpdateDelegate {
     func didUpdatePlant() {

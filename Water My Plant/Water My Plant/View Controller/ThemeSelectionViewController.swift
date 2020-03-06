@@ -48,4 +48,9 @@ class ThemeSelectionViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func roseThemeTapped(_ sender: Any) {
+        themeHelper?.setThemePreferenceToRose()
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
