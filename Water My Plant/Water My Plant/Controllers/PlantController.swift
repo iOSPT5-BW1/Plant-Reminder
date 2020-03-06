@@ -67,7 +67,4 @@ class PlantController {
             print("Error loading plant data: \(error)")
         }
     }
-    
-    
-    
 }

@@ -38,8 +38,8 @@ class PlantTableViewCell: UITableViewCell {
         guard let nicknameLabel = nicknameLabel.text else { return }
         let content = UNMutableNotificationContent()
         content.title = "Your plant is thirsty!"
-        content.subtitle = "It's time to water \(nicknameLabel)!"
-        content.body = "It is time to water your plant!"
+        content.subtitle = "It's time to water \(nicknameLabel)."
+        content.body = "Make sure you water your plant today."
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
@@ -56,9 +56,19 @@ class PlantTableViewCell: UITableViewCell {
         guard let plant = plant else { return }
         
         plantImage.image = UIImage(data: plant.plantImageData)
+        plantImage.setRounded()
         nicknameLabel.text = plant.nickname
         speciesLabel.text = plant.species
         
     }
     
 }
+extension UIImageView {
+
+   func setRounded() {
+    let radius = self.frame.width / 2
+      self.layer.cornerRadius = radius
+      self.layer.masksToBounds = true
+   }
+}
+
