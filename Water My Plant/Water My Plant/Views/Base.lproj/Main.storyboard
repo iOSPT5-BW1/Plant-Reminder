@@ -201,10 +201,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Plant Details" id="Gdv-aa-gcA"/>
                     <connections>
+                        <outlet property="OptimalConditionsLabel" destination="3QL-gd-oOc" id="i0c-6f-uEp"/>
+                        <outlet property="indoorOutdoorLabel" destination="AKH-DI-obY" id="bCf-w8-mmy"/>
                         <outlet property="indoorOutdoorTextField" destination="9g2-18-1kI" id="xj9-fV-XeZ"/>
                         <outlet property="plantDetailImageView" destination="cJi-8e-ka7" id="eun-RG-pl3"/>
                         <outlet property="speciesLabel" destination="eUZ-Kn-yA3" id="Fuu-lg-Koq"/>
+                        <outlet property="sunlightRequirmentsLabel" destination="0z5-9x-CsZ" id="vJo-DU-VAP"/>
                         <outlet property="sunlightRuquirementsTextField" destination="Bfk-G6-lLy" id="7r4-UU-QxY"/>
+                        <outlet property="waterRequirementsLabel" destination="Dqs-Sk-UrT" id="7SZ-LO-rRL"/>
                         <outlet property="waterRequirementsTextField" destination="cpY-eI-k4Y" id="ijd-03-1UD"/>
                     </connections>
                 </viewController>
@@ -292,13 +296,22 @@
                                     <constraint firstItem="cs3-DP-B5K" firstAttribute="top" secondItem="rjz-9L-wI9" secondAttribute="top" constant="83" id="4zO-NW-RA1"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0l-B9-zfr">
+                                <rect key="frame" x="196" y="565" width="34" height="30"/>
+                                <state key="normal" title="Rose"/>
+                                <connections>
+                                    <action selector="roseThemeTapped:" destination="XmS-ii-ewa" eventType="touchUpInside" id="NQ9-Ho-TMB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="B0l-B9-zfr" firstAttribute="top" secondItem="G5K-K8-nk9" secondAttribute="bottom" constant="25.5" id="DT9-md-lwT"/>
                             <constraint firstItem="rjz-9L-wI9" firstAttribute="centerY" secondItem="7qt-VO-fXF" secondAttribute="centerY" id="Fpc-H9-7HR"/>
                             <constraint firstItem="1yQ-za-4Rl" firstAttribute="trailing" secondItem="Njr-gS-dul" secondAttribute="trailing" constant="80" id="Mhj-5S-cjU"/>
                             <constraint firstItem="Njr-gS-dul" firstAttribute="leading" secondItem="1yQ-za-4Rl" secondAttribute="leading" constant="80" id="n4e-AL-z41"/>
                             <constraint firstItem="rjz-9L-wI9" firstAttribute="centerX" secondItem="7qt-VO-fXF" secondAttribute="centerX" id="o9c-w1-QoR"/>
+                            <constraint firstItem="B0l-B9-zfr" firstAttribute="centerX" secondItem="G5K-K8-nk9" secondAttribute="centerX" id="sNQ-38-NeF"/>
                             <constraint firstItem="rjz-9L-wI9" firstAttribute="top" secondItem="Njr-gS-dul" secondAttribute="bottom" constant="150" id="sZF-py-kb3"/>
                             <constraint firstItem="Njr-gS-dul" firstAttribute="top" secondItem="1yQ-za-4Rl" secondAttribute="top" constant="40" id="zEN-9w-bOu"/>
                         </constraints>
@@ -348,6 +361,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="MrN-4T-HS9"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Add Photo"/>
                                                 <connections>
                                                     <action selector="addPhotoTapped:" destination="BF9-CO-fVT" eventType="touchUpInside" id="mB1-1W-tZW"/>
@@ -436,6 +450,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addLabel" destination="CiI-fJ-Pok" id="a1I-uv-bWT"/>
                         <outlet property="indoorOrOutdoor" destination="PAF-K9-ZlB" id="JWs-X1-nCB"/>
                         <outlet property="plantImage" destination="xXV-Sh-apj" id="c3i-pt-Rzs"/>
                         <outlet property="plantNickname" destination="roX-LQ-oM4" id="zVh-Oy-NTa"/>

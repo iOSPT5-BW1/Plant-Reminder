@@ -25,6 +25,10 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var waterRequirementsTextField: UITextField!
     @IBOutlet weak var sunlightRuquirementsTextField: UITextField!
     @IBOutlet weak var indoorOutdoorTextField: UITextField!
+    @IBOutlet weak var OptimalConditionsLabel: UILabel!
+    @IBOutlet weak var waterRequirementsLabel: UILabel!
+    @IBOutlet weak var sunlightRequirmentsLabel: UILabel!
+    @IBOutlet weak var indoorOutdoorLabel: UILabel!
     
     // MARK: IBActions
     
@@ -81,42 +85,97 @@ class PlantDetailViewController: UIViewController, UITextFieldDelegate {
         
         if preference == "Light" {
             view.backgroundColor = .white
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Dark" {
-            view.backgroundColor = .darkGray
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            gradientLayer.colors = [UIColor.darkGray.cgColor, UIColor.white.cgColor]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Blue" {
-            view.backgroundColor = .cyan
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            gradientLayer.colors = [UIColor.cyan.cgColor, UIColor.white.cgColor]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Green" {
-            view.backgroundColor = .green
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            gradientLayer.colors = [UIColor.green.cgColor, UIColor.white.cgColor]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Pink" {
-            view.backgroundColor = .systemPink
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            gradientLayer.colors = [UIColor.magenta.cgColor, UIColor.white.cgColor]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
         } else if preference == "Orange" {
-            view.backgroundColor = .orange
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            gradientLayer.colors = [UIColor.orange.cgColor, UIColor.white.cgColor]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+            
+            let color = UIColor.black
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
+        } else if preference == "Plant" {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "Plant")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            let color = UIColor.white
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): color]
+            
+            speciesLabel.textColor = color
+            OptimalConditionsLabel.textColor = color
+            waterRequirementsLabel.textColor = color
+            sunlightRequirmentsLabel.textColor = color
+            indoorOutdoorLabel.textColor = color
         }
     }
-    
-    //MARK: Textfield Delegate
-    
-    // When user press the return key in keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    // It is called before text field become active
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.backgroundColor = UIColor.lightGray
-        return true
-    }
 
-    // It is called when text field going to inactive
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textField.backgroundColor = UIColor.white
-        return true
-    }
 
-    // It is called each time user type a character by keyboard
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
+//MARK: Textfield Delegate
+
+// When user press the return key in keyboard
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+}
+
+// It is called before text field become active
+func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    textField.backgroundColor = UIColor.lightGray
+    return true
+}
+
+// It is called when text field going to inactive
+func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    textField.backgroundColor = UIColor.white
+    return true
+}
+
+// It is called each time user type a character by keyboard
+func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    return true
+}
 }
 
